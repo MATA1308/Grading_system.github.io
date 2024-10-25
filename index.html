@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="./Image/WhatsApp_Image_2024-10-24_at_15.32.08_17440958-removebg-preview.png" class="logo_img">
+            <h1>
+                SQI Result Checker
+            </h1>
+        </div>
+        <div class="input">
+            <input type="number" placeholder="Enter your SQI Result" id="yourScore">
+            <button onclick="scoreGrade()">Check</button>
+        </div>
+        <div>
+            <p id="result">See your result here</p>
+        </div>
+        </div>
+    </div>
+</body>
+<script>
+    function scoreGrade(){
+        var mark = Number(yourScore.value)
+        var fAudio = new Audio('./Audio/WhatsApp Audio 2024-10-24 at 14.37.41_6338d8fb.mp3')
+        var dAudio = new Audio("./Audio/WhatsApp Audio 2024-10-24 at 14.38.23_4ea97019.mp3")
+        var cAudio = new Audio("./Audio/WhatsApp Audio 2024-10-24 at 14.38.10_17fed153.mp3")
+        var bAudio = new Audio("./Audio/WhatsApp Audio 2024-10-24 at 14.38.00_4ab68c2b.mp3")
+        var aAudio = new Audio("./Audio/WhatsApp Audio 2024-10-24 at 14.37.50_b9778e2d.mp3")
+        if (mark == ""){
+            result.innerHTML="Please enter your score";
+
+        }
+        else{
+            if (mark >=0 && mark <40){
+                result.innerHTML="Your grade is F - fail 😥";
+                fAudio.play();
+            }
+            else if (mark >=40 && mark <50){
+                result.innerHTML="Your grade is D - pass 😑 ";
+                dAudio.play()
+            }
+            else if (mark >=50 && mark <60){
+                result.innerHTML="Your grade is C - credit 👌";
+                cAudio.play()
+            }
+            else if (mark >=60 && mark <75){
+                result.innerHTML="Your grade is B - Good 👍";
+                bAudio.play()
+            }
+            else if (mark >=75 && mark <=100){
+                result.innerHTML="Your grade is A - Excellent 💫🥳";
+                aAudio.play()
+            }
+            else{
+                result.innerHTML="Please enter a valid score";
+            }
+            }
+        }
+    
+    
+</script>
+</html>
