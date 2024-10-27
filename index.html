@@ -28,38 +28,41 @@
 <script>
     function scoreGrade(){
         var mark = Number(yourScore.value)
-        var fAudio = new Audio('./Audio/WhatsApp Audio 2024-10-24 at 14.37.41_6338d8fb.mp3')
-        var dAudio = new Audio("./Audio/WhatsApp Audio 2024-10-24 at 14.38.23_4ea97019.mp3")
-        var cAudio = new Audio("./Audio/WhatsApp Audio 2024-10-24 at 14.38.10_17fed153.mp3")
-        var bAudio = new Audio("./Audio/WhatsApp Audio 2024-10-24 at 14.38.00_4ab68c2b.mp3")
-        var aAudio = new Audio("./Audio/WhatsApp Audio 2024-10-24 at 14.37.50_b9778e2d.mp3")
+        var fGradeAudio = new Audio('./Audio/WhatsApp Audio 2024-10-24 at 14.37.41_6338d8fb.mp3')
+        var dGradeAudio = new Audio("./Audio/WhatsApp Audio 2024-10-24 at 14.38.23_4ea97019.mp3")
+        var cGradeAudio = new Audio("./Audio/WhatsApp Audio 2024-10-24 at 14.38.10_17fed153.mp3")
+        var bGradeAudio = new Audio("./Audio/WhatsApp Audio 2024-10-24 at 14.38.00_4ab68c2b.mp3")
+        var aGradeAudio = new Audio("./Audio/WhatsApp Audio 2024-10-24 at 14.37.50_b9778e2d.mp3")
+        var enterYourScoreAudio= new Audio("./Audio/WhatsApp Audio 2024-10-27 at 13.55.44_67cb78ee.mp3")
+        var elseAudio = new Audio("./Audio/WhatsApp Audio 2024-10-27 at 14.05.47_4d7acb7d")
         if (mark == ""){
             result.innerHTML="Please enter your score";
-
+            enterYourScoreAudio.play();
         }
         else{
             if (mark >=0 && mark <40){
                 result.innerHTML="Your grade is F - fail 😥";
-                fAudio.play();
+                fGradeAudio.play();
             }
             else if (mark >=40 && mark <50){
                 result.innerHTML="Your grade is D - pass 😑 ";
-                dAudio.play()
+                dGradeAudio.play()
             }
             else if (mark >=50 && mark <60){
                 result.innerHTML="Your grade is C - credit 👌";
-                cAudio.play()
+                cGradeAudio.play()
             }
             else if (mark >=60 && mark <75){
                 result.innerHTML="Your grade is B - Good 👍";
-                bAudio.play()
+                bGradeAudio.play()
             }
             else if (mark >=75 && mark <=100){
                 result.innerHTML="Your grade is A - Excellent 💫🥳";
-                aAudio.play()
+                aGradeAudio.play()
             }
             else{
-                result.innerHTML="Please enter a valid score";
+                result.innerHTML="Please enter a valid score ranging from 0 - 100";
+                elseAudio.play()
             }
             }
         }
